@@ -1,0 +1,46 @@
+name: Deploy Blog Demo
+
+# 触发条件
+
+on:
+  push:
+    branches: 
+      - main
+
+# 执行的任务
+
+jobs:
+  build-and-deploy:
+    # 服务器环境：最新版 Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      # 拉代码
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      # 安装 Node    
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+           node-version: '14'
+      # 安装依赖 && 构建
+      - name: Build
+        run: npm install && npm run build
+
+      # 部署到服务器
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+            # 私钥id_rsa
+            SSH_PRIVATE_KEY: ${{ secrets.TOKEN }} 
+            # 复制操作的参数。"-avzr --delete"意味部署时清空服务器目标目录下的文件
+            ARGS: "-avzr --delete" 
+            # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
+            SOURCE: "dist/" 
+            # 服务器域名
+            REMOTE_HOST: ${{ secrets.HOST }} 
+            # 腾讯云默认用户名为root
+            REMOTE_USER: "root" 
+            # 目标目录
+            TARGET: "/usr/html/"
