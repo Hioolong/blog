@@ -1,7 +1,5 @@
 <script setup>
-import { useData } from 'vitepress'
-const data = useData()
-console.log(123, data);
+
 </script>
 
 <template>

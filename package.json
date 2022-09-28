@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "dev": "node parseMdFile.js && vitepress dev docs",
+    "build": "node parseMdFile.js && vitepress build docs",
+    "serve": "node parseMdFile.js && vitepress serve docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "js-yaml": "^4.1.0",
     "less": "^4.1.3",
     "vitepress": "1.0.0-alpha.16",
     "vue": "^3.2.39"

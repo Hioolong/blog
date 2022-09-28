@@ -3,7 +3,9 @@ layout: home
 ---
 
 <script setup>
-import home from './.vitepress/components/home.vue'
+import home from './.vitepress/components/Home.vue'
+import DocList from './.vitepress/components/DocList.vue'
 </script>
 
 <home />
+<DocList />
