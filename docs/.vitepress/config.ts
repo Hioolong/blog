@@ -9,7 +9,7 @@ export default defineConfig({
     },
     lastUpdated: true,
     themeConfig: {
-        logo: '/public/logo.svg',
+        logo: '/logo.svg',
         socialLinks: [
             {
                 icon: 'github',
