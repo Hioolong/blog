@@ -4,13 +4,13 @@ const data = useData()
 </script>
 
 <template>
-<div class="home">
-    <h1>继续往天飞</h1>
-    <h1 style="margin-top: 50px;">再去遁地</h1>
-</div>
+    <div class="home">
+        <h1>继续往天飞</h1>
+        <h1 style="margin-top: 50px;">再去遁地</h1>
+    </div>
 </template>
 
-<style lang="less" scoped>
+<style scoped>
 .home {
     height: 100vh;
     background: url('/bg.svg') center center / cover no-repeat;
