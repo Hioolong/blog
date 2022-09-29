@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 import { useDocsData } from '../data/useDocsData'
 import DocsListItem from './DocListItem.vue'
 
