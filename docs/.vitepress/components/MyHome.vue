@@ -23,5 +23,6 @@ const data = useData()
 h1 {
     font-size: 40px;
     line-height: 40px;
+    font-family: var(--vp-font-family-base);
 }
 </style>

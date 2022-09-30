@@ -7,6 +7,9 @@ export default defineConfig({
     markdown: {
         lineNumbers: true
     },
+    head: [
+        ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ],
     lastUpdated: true,
     themeConfig: {
         logo: '/logo.svg',

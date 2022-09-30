@@ -1,4 +1,10 @@
 :root {
     --vp-nav-height-negative-desktop: -72px;
     --vp-nav-height-negative-mobile: -56px;
+    --box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+}
+html.dark {
+    --box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.6);
+    --box-shadow-hover: 0 2px 16px 0 rgba(0, 0, 0, 0.7);    
 }

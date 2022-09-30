@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node parseMdFile.js && vitepress dev docs",
-    "build": "vitepress build docs",
+    "build": "node parseMdFile.js && vitepress build docs",
     "serve": "node parseMdFile.js && vitepress serve docs"
   },
   "keywords": [],
