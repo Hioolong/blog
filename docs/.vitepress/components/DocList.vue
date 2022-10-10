@@ -24,13 +24,18 @@ const { data } = useDocsData()
     </div>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 .doc-list-wrapper {
     display: flex;
     align-items: flex-start;
     margin: 20px auto 0;
     padding: 0 20px;
     max-width: 1126px;
+}
+@media (max-width: 719px) {
+    .doc-list-wrapper {
+        display: block !important;
+    }
 }
 .left {
     flex: 1;

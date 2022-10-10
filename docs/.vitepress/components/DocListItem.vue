@@ -73,8 +73,12 @@
         .bar {
             display: flex;
             align-items: center;
-            & > div:not(:first-child) {
-                margin-left: 20px;
+            flex-wrap: wrap;
+            & > div {
+                white-space: nowrap;
+            }
+            & > div:not(:last-child) {
+                margin-right: 20px;
             }
             .tags > span {
                 margin-left: 6px;
