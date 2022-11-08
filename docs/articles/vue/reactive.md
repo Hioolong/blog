@@ -26,7 +26,7 @@ tags:
 function changeDocTitle () {
     window.document.title = 'Ronney'
 }
-changeDocTitle()
+changeDocTitle()               
 ```
 
 函数 `changeDocTitle` 改变了全局变量 `window.document` 的 `title` 属性，该变量属于一个外部变量，凡是函数内改变了外部的变量，我们都可以认为是一个副作用函数
