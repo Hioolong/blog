@@ -18,7 +18,7 @@ function parseAllMdFile(filePath) {
 			frontmatterRegexp.lastIndex = 0;
 			if (fileInfo) {
 				const fileInfoObj = yaml.load(fileInfo[1]);
-				fileInfoObj.link = `/blog/${itemPath.slice(4, -3)}`;
+				fileInfoObj.link = `/blog${itemPath.slice(4, -3)}`;
 				allArticles.push(fileInfoObj);
 			}
 		}
