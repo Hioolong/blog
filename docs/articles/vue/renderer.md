@@ -322,6 +322,17 @@ while(oldStartIndex <= oldEndIndex && newStartIndex <= newEndIndex) {
     newStartVnode = newChildren[++newStartIndex]
   }
 }
+if (oldStartIndex > oldEndIndex && newStartIndex <= newEndIndex) {
+  // 旧子节点列表已遍历完成，而新子节点列表还剩余节点未处理，则剩下的需要进行挂载
+  for(let i = newStartIndex; i <= newEndIndex; i++) {
+    patch(null, newChildren[i], container, oldStartVnode.el)
+  }
+} else if (newEndIndex < newStartIndex && oldStartIndex <= oldEndIndex) {
+  // 新子节点列表遍历完成，但旧子节点列表还剩余节点未处理，则剩下的需要进行卸载操作
+  for(let i = oldStartIndex; i <= oldEndIndex; i++) {
+    unmount(oldChildren[i])
+  }
+}
 ```
 
 ## 快速 Diff 算法
